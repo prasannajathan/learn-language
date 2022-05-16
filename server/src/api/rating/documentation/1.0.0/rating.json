@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/tutors": {
+    "/ratings": {
       "get": {
         "responses": {
           "200": {
@@ -20,25 +20,11 @@
                           "attributes": {
                             "type": "object",
                             "properties": {
-                              "name": {
+                              "rating": {
+                                "type": "integer"
+                              },
+                              "review": {
                                 "type": "string"
-                              },
-                              "about": {
-                                "type": "string"
-                              },
-                              "price": {
-                                "type": "number",
-                                "format": "float"
-                              },
-                              "shortIntro": {
-                                "type": "string"
-                              },
-                              "teaches": {
-                                "type": "string",
-                                "enum": [
-                                  "English",
-                                  "Hindi"
-                                ]
                               },
                               "createdAt": {
                                 "type": "string",
@@ -351,25 +337,11 @@
                                         "attributes": {
                                           "type": "object",
                                           "properties": {
-                                            "name": {
+                                            "rating": {
+                                              "type": "integer"
+                                            },
+                                            "review": {
                                               "type": "string"
-                                            },
-                                            "about": {
-                                              "type": "string"
-                                            },
-                                            "price": {
-                                              "type": "number",
-                                              "format": "float"
-                                            },
-                                            "shortIntro": {
-                                              "type": "string"
-                                            },
-                                            "teaches": {
-                                              "type": "string",
-                                              "enum": [
-                                                "English",
-                                                "Hindi"
-                                              ]
                                             },
                                             "createdAt": {
                                               "type": "string",
@@ -636,7 +608,7 @@
           }
         },
         "tags": [
-          "Tutor"
+          "Rating"
         ],
         "parameters": [
           {
@@ -720,7 +692,7 @@
             }
           }
         ],
-        "operationId": "get/tutors"
+        "operationId": "get/ratings"
       },
       "post": {
         "responses": {
@@ -739,25 +711,11 @@
                         "attributes": {
                           "type": "object",
                           "properties": {
-                            "name": {
+                            "rating": {
+                              "type": "integer"
+                            },
+                            "review": {
                               "type": "string"
-                            },
-                            "about": {
-                              "type": "string"
-                            },
-                            "price": {
-                              "type": "number",
-                              "format": "float"
-                            },
-                            "shortIntro": {
-                              "type": "string"
-                            },
-                            "teaches": {
-                              "type": "string",
-                              "enum": [
-                                "English",
-                                "Hindi"
-                              ]
                             },
                             "createdAt": {
                               "type": "string",
@@ -1070,25 +1028,11 @@
                                       "attributes": {
                                         "type": "object",
                                         "properties": {
-                                          "name": {
+                                          "rating": {
+                                            "type": "integer"
+                                          },
+                                          "review": {
                                             "type": "string"
-                                          },
-                                          "about": {
-                                            "type": "string"
-                                          },
-                                          "price": {
-                                            "type": "number",
-                                            "format": "float"
-                                          },
-                                          "shortIntro": {
-                                            "type": "string"
-                                          },
-                                          "teaches": {
-                                            "type": "string",
-                                            "enum": [
-                                              "English",
-                                              "Hindi"
-                                            ]
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -1334,10 +1278,10 @@
           }
         },
         "tags": [
-          "Tutor"
+          "Rating"
         ],
         "parameters": [],
-        "operationId": "post/tutors",
+        "operationId": "post/ratings",
         "requestBody": {
           "required": true,
           "content": {
@@ -1347,8 +1291,65 @@
                   "data": {
                     "type": "object",
                     "properties": {
-                      "name": {
+                      "rating": {
+                        "type": "integer"
+                      },
+                      "review": {
                         "type": "string"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "publishedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "createdBy": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
+                      },
+                      "updatedBy": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
+                      },
+                      "localizations": {
+                        "type": "array",
+                        "items": {
+                          "oneOf": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "string"
+                            }
+                          ],
+                          "example": "string or id"
+                        }
+                      },
+                      "locale": {
+                        "type": "string"
+                      },
+                      "sitemap_exclude": {
+                        "type": "boolean"
                       }
                     }
                   }
@@ -1359,7 +1360,7 @@
         }
       }
     },
-    "/tutors/{id}": {
+    "/ratings/{id}": {
       "get": {
         "responses": {
           "200": {
@@ -1377,25 +1378,11 @@
                         "attributes": {
                           "type": "object",
                           "properties": {
-                            "name": {
+                            "rating": {
+                              "type": "integer"
+                            },
+                            "review": {
                               "type": "string"
-                            },
-                            "about": {
-                              "type": "string"
-                            },
-                            "price": {
-                              "type": "number",
-                              "format": "float"
-                            },
-                            "shortIntro": {
-                              "type": "string"
-                            },
-                            "teaches": {
-                              "type": "string",
-                              "enum": [
-                                "English",
-                                "Hindi"
-                              ]
                             },
                             "createdAt": {
                               "type": "string",
@@ -1708,25 +1695,11 @@
                                       "attributes": {
                                         "type": "object",
                                         "properties": {
-                                          "name": {
+                                          "rating": {
+                                            "type": "integer"
+                                          },
+                                          "review": {
                                             "type": "string"
-                                          },
-                                          "about": {
-                                            "type": "string"
-                                          },
-                                          "price": {
-                                            "type": "number",
-                                            "format": "float"
-                                          },
-                                          "shortIntro": {
-                                            "type": "string"
-                                          },
-                                          "teaches": {
-                                            "type": "string",
-                                            "enum": [
-                                              "English",
-                                              "Hindi"
-                                            ]
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -1972,7 +1945,7 @@
           }
         },
         "tags": [
-          "Tutor"
+          "Rating"
         ],
         "parameters": [
           {
@@ -1986,7 +1959,7 @@
             }
           }
         ],
-        "operationId": "get/tutors/{id}"
+        "operationId": "get/ratings/{id}"
       },
       "put": {
         "responses": {
@@ -2005,25 +1978,11 @@
                         "attributes": {
                           "type": "object",
                           "properties": {
-                            "name": {
+                            "rating": {
+                              "type": "integer"
+                            },
+                            "review": {
                               "type": "string"
-                            },
-                            "about": {
-                              "type": "string"
-                            },
-                            "price": {
-                              "type": "number",
-                              "format": "float"
-                            },
-                            "shortIntro": {
-                              "type": "string"
-                            },
-                            "teaches": {
-                              "type": "string",
-                              "enum": [
-                                "English",
-                                "Hindi"
-                              ]
                             },
                             "createdAt": {
                               "type": "string",
@@ -2336,25 +2295,11 @@
                                       "attributes": {
                                         "type": "object",
                                         "properties": {
-                                          "name": {
+                                          "rating": {
+                                            "type": "integer"
+                                          },
+                                          "review": {
                                             "type": "string"
-                                          },
-                                          "about": {
-                                            "type": "string"
-                                          },
-                                          "price": {
-                                            "type": "number",
-                                            "format": "float"
-                                          },
-                                          "shortIntro": {
-                                            "type": "string"
-                                          },
-                                          "teaches": {
-                                            "type": "string",
-                                            "enum": [
-                                              "English",
-                                              "Hindi"
-                                            ]
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -2600,7 +2545,7 @@
           }
         },
         "tags": [
-          "Tutor"
+          "Rating"
         ],
         "parameters": [
           {
@@ -2614,7 +2559,7 @@
             }
           }
         ],
-        "operationId": "put/tutors/{id}",
+        "operationId": "put/ratings/{id}",
         "requestBody": {
           "required": true,
           "content": {
@@ -2624,25 +2569,11 @@
                   "data": {
                     "type": "object",
                     "properties": {
-                      "name": {
+                      "rating": {
+                        "type": "integer"
+                      },
+                      "review": {
                         "type": "string"
-                      },
-                      "about": {
-                        "type": "string"
-                      },
-                      "price": {
-                        "type": "number",
-                        "format": "float"
-                      },
-                      "shortIntro": {
-                        "type": "string"
-                      },
-                      "teaches": {
-                        "type": "string",
-                        "enum": [
-                          "English",
-                          "Hindi"
-                        ]
                       },
                       "createdAt": {
                         "type": "string",
@@ -2866,7 +2797,7 @@
           }
         },
         "tags": [
-          "Tutor"
+          "Rating"
         ],
         "parameters": [
           {
@@ -2880,10 +2811,10 @@
             }
           }
         ],
-        "operationId": "delete/tutors/{id}"
+        "operationId": "delete/ratings/{id}"
       }
     },
-    "/tutors/{id}/localizations": {
+    "/ratings/{id}/localizations": {
       "post": {
         "responses": {
           "200": {
@@ -2901,25 +2832,11 @@
                         "attributes": {
                           "type": "object",
                           "properties": {
-                            "name": {
+                            "rating": {
+                              "type": "integer"
+                            },
+                            "review": {
                               "type": "string"
-                            },
-                            "about": {
-                              "type": "string"
-                            },
-                            "price": {
-                              "type": "number",
-                              "format": "float"
-                            },
-                            "shortIntro": {
-                              "type": "string"
-                            },
-                            "teaches": {
-                              "type": "string",
-                              "enum": [
-                                "English",
-                                "Hindi"
-                              ]
                             },
                             "createdAt": {
                               "type": "string",
@@ -3232,25 +3149,11 @@
                                       "attributes": {
                                         "type": "object",
                                         "properties": {
-                                          "name": {
+                                          "rating": {
+                                            "type": "integer"
+                                          },
+                                          "review": {
                                             "type": "string"
-                                          },
-                                          "about": {
-                                            "type": "string"
-                                          },
-                                          "price": {
-                                            "type": "number",
-                                            "format": "float"
-                                          },
-                                          "shortIntro": {
-                                            "type": "string"
-                                          },
-                                          "teaches": {
-                                            "type": "string",
-                                            "enum": [
-                                              "English",
-                                              "Hindi"
-                                            ]
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -3496,7 +3399,7 @@
           }
         },
         "tags": [
-          "Tutor"
+          "Rating"
         ],
         "parameters": [
           {
@@ -3510,7 +3413,7 @@
             }
           }
         ],
-        "operationId": "post/tutors/{id}/localizations",
+        "operationId": "post/ratings/{id}/localizations",
         "requestBody": {
           "required": true,
           "content": {
@@ -3520,8 +3423,65 @@
                   "data": {
                     "type": "object",
                     "properties": {
-                      "name": {
+                      "rating": {
+                        "type": "integer"
+                      },
+                      "review": {
                         "type": "string"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "publishedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "createdBy": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
+                      },
+                      "updatedBy": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
+                      },
+                      "localizations": {
+                        "type": "array",
+                        "items": {
+                          "oneOf": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "string"
+                            }
+                          ],
+                          "example": "string or id"
+                        }
+                      },
+                      "locale": {
+                        "type": "string"
+                      },
+                      "sitemap_exclude": {
+                        "type": "boolean"
                       }
                     }
                   }
