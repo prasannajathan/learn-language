@@ -60,6 +60,12 @@
         "English",
         "Hindi"
       ]
+    },
+    "rating": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::rating.rating",
+      "inversedBy": "tutor"
     }
   }
 }
