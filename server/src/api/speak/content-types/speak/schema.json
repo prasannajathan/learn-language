@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "ratings",
+  "collectionName": "speaks",
   "info": {
-    "singularName": "rating",
-    "pluralName": "ratings",
-    "displayName": "Rating",
-    "description": ""
+    "singularName": "speak",
+    "pluralName": "speaks",
+    "displayName": "Speak"
   },
   "options": {
     "draftAndPublish": true
@@ -16,28 +15,31 @@
     }
   },
   "attributes": {
-    "rating": {
+    "language": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "integer",
-      "max": 5
+      "type": "enumeration",
+      "enum": [
+        "English",
+        "Spanish",
+        "German"
+      ]
     },
-    "review": {
+    "level": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "text"
-    },
-    "tutors": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::tutor.tutor",
-      "inversedBy": "ratings"
+      "type": "enumeration",
+      "enum": [
+        "native",
+        "A1",
+        "C2"
+      ]
     }
   }
 }
