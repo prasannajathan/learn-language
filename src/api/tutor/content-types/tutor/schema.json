@@ -63,9 +63,17 @@
     },
     "ratings": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "oneToMany",
       "target": "api::rating.rating",
-      "inversedBy": "tutors"
+      "mappedBy": "tutor"
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

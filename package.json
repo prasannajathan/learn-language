@@ -23,7 +23,8 @@
     "strapi-plugin-email-designer": "^2.1.1",
     "strapi-plugin-entity-relationship-chart": "^4.1.0",
     "strapi-plugin-preview-button": "^0.3.1",
-    "strapi-plugin-sitemap": "^2.0.8"
+    "strapi-plugin-sitemap": "^2.0.8",
+    "strapi-plugin-slugify": "^2.2.2"
   },
   "author": {
     "name": "A Strapi developer"

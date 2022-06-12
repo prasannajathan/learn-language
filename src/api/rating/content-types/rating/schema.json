@@ -33,9 +33,9 @@
       },
       "type": "text"
     },
-    "tutors": {
+    "tutor": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "manyToOne",
       "target": "api::tutor.tutor",
       "inversedBy": "ratings"
     }
